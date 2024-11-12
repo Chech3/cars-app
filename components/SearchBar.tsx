@@ -1,9 +1,24 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
+import {CustomFilterProps} from "../types"
+import SearchMenuFacturer from './SearchMenuFacturer'
+import { manufacturers } from '../constants/index';
 
-const SearchBar = () => {
+const SearchBar = ({title}: CustomFilterProps) => {
+  const [manufacturer, setManufacturer] = useState("")
+  const handleSearch = () => {
+    console.log("search")
+  }
   return (
-    <div>SearchBar</div>
-  )
-}
+    <form className="searchbar" onSubmit={handleSearch}>
+      <div className="searchbar__item">
+        <SearchMenuFacturer
+          manufacturer={manufacturer}
+          setManufacturer={setManufacturer}
+        />
+      </div>
+    </form>
+  );
+};
 
-export default SearchBar
+export default SearchBar;

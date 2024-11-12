@@ -1,20 +1,9 @@
-'use client '
-import React, { useState } from 'react'
-import {CustomFilterProps} from "../types"
-import SearchMenuFacturer from './SearchMenuFacturer'
-import { manufacturers } from '../constants/index';
-const CustomFilter = ({title}: CustomFilterProps) => {
-  const [manufacturer, setManufacturer] = useState("")
-  const handleSearch = () => {
-    console.log("search")
-  }
-  return (
-    <form className='searchbar' onSubmit={handleSearch}>
-      <div className='searchbar__item'> 
-        <SearchMenuFacturer manufacturer={manufacturer} setManufacturer={setManufacturer} />
-      </div>
-    </form>
-  )
-}
+"use client";
+import { CustomFilterProps } from "@/types";
+import React, { useState } from "react";
 
-export default CustomFilter
+const CustomFilter = ({title} : CustomFilterProps) => {
+  return <div>CustomFilter</div>;
+};
+
+export default CustomFilter;
